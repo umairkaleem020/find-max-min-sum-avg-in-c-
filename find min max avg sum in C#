@@ -1,0 +1,77 @@
+using System;
+using System.Linq;
+
+namespace labClass
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = { -1, 5, 0, 9, 98, 76 ,100};
+            { 
+            for (int i = 0; i < array.Length; i++)
+                Console.Write(" " + array[i]);
+            }
+            Console.WriteLine();
+            Program value= new Program();
+            Console.WriteLine("Maximum Number is :" + value.findMaximum(array));
+            Console.WriteLine("Minimum Number is :" + value.findMinimum(array));
+            Console.WriteLine("Sum of Numbers is :" + value.findSum(array));
+            Console.WriteLine("Average of Numbers is :" + value.findAverage(array));
+        }
+
+        public int findMaximum(int[] arr)
+        {
+            int length = arr.Length;
+            int maximum = arr[0];
+            for (int i = 1; i < length; i++)
+            {
+                if (arr[i] > maximum)
+                {
+                    maximum = arr[i];
+                }
+            }
+            
+            return maximum;
+        }
+
+        public int findMinimum(int[] arr)
+        {
+            int length = arr.Length;
+            int minimum = arr[0];
+            for ( int i = 1; i < length ; i++)
+            {
+                if (arr[i] < minimum)
+                {
+                    minimum = arr[i];
+                }
+            }
+            return minimum;
+
+        }
+
+        public int findSum(int[] arr)
+        {
+            int sum = 0;
+            for(int i=0 ; i <= arr.Length-1; i++)
+            {
+                sum = sum + arr[i];   
+            }
+            return sum;
+        }
+
+        public int findAverage(int[] arr)
+        {
+            int sum = 0;
+            int avg= 0;
+            foreach (var i in arr)
+            {
+                sum = sum+i;
+            }
+              avg= sum/arr.Length;
+            return avg;
+        }
+
+        
+    }
+}
